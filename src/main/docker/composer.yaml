@@ -1,0 +1,15 @@
+name: samurai
+services:
+  postgres:
+    container_name: samurai_db
+    image: 'postgres:latest'
+    environment:
+      - 'POSTGRES_DB=demospring'
+      - 'POSTGRES_PASSWORD=password'
+      - 'POSTGRES_USER=samurai'
+
+    ports:
+      - '5433:5432'
+volumes:
+  postgres_data:
+    driver: local
